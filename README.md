@@ -12,6 +12,7 @@ The scripts mentioned bellow will work for most of the versions of ubuntu, howev
 
 5. Python
 
+
 ---
 
 ## Java Setup
@@ -77,7 +78,7 @@ sudo mv hadoop-2.7.2.tar.gz /usr/local/hadoop
 sudo chown +R <<username>>:<<username>> /usr/local/hadoop
 ```
 
-Step 3 : Add an environment variable.
+### Step 3 : Add an environment variable.
 
 Follow steps similar to adding JAVA\_HOME, just that instead of JAVA\_HOME, you will have to add HADOOP\_HOME
 
@@ -88,10 +89,26 @@ HADOOP_HOME=/usr/local/hadoop
 and path needs to be updated in .bashrc,.profile as bellow :
 
 ```
-PATH=$HADOOP_HOME/bin:$PAT
+PATH=$HADOOP_HOME/bin:$PATH
 ```
 
-DD
+> Never update the PATH env variable in \/etc\/environment directly the way you modify other variables. Rather add the expanded path in the exisiting PATH env variable declaration as bellow
+> 
+> ```
+> PATH=/usr/local/hadoop/bin:/usr/lib/jvm/java-7-oracle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+> ```
+
+and finally reboot the system or source the ~\/.bashrc and ~\/.profile file, the get the changes reflected.
+
+type 'hadoop', to see if the is returning any errors or not.
 
 
+
+---
+
+
+
+
+
+sss
 

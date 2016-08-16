@@ -9,11 +9,10 @@ The scripts mentioned bellow will work for most of the versions of ubuntu, howev
 3. Scala
 
 4. Spark
+
 5. Python
 
 ---
-
-
 
 ## Java Setup
 
@@ -23,8 +22,6 @@ The scripts mentioned bellow will work for most of the versions of ubuntu, howev
 sudo apt-add-repository ppa:webupd8team/java
 sudo apt-get install oracle-java7-installer
 ```
-
-
 
 ### Step 2: Set the environment Variable
 
@@ -49,7 +46,7 @@ Do not use PATH=ABC:$PATH kind of format in \/etc\/environment, as .it can be fa
 PATH=/usr/lib/jvm/java-7-oracle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
 ```
 
-Now restart the system. 
+Now restart the system.
 
 In case there are any reboot issues, open the machine without lightdm or display managers. Via cntl+alt+Fn+F2. Now revert the changes you did in \/etc\/environment via backup of the same file. And then type
 
@@ -94,13 +91,7 @@ and path needs to be updated in .bashrc,.profile as bellow :
 PATH=$HADOOP_HOME/bin:$PAT
 ```
 
-
-
-
-
-
-
-
+DD
 
 
 

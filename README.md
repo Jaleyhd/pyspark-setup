@@ -187,7 +187,7 @@ PATH=$SPARK_HOME/bin:$PATH
 
 and finally reboot the system or source the ~\/.bashrc and ~\/.profile file, the get the changes reflected.
 
-Now type spark-shell, to see if you get the required scala command prompt, with spark-context getting setup.
+Now type spark-shell, to see if you get the required scala command prompt, with spark-context getting setup. You should also be able to get python open in spark context by typing pyspark.
 
 ---
 

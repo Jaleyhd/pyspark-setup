@@ -108,7 +108,97 @@ type 'hadoop', to see if the is returning any errors or not.
 
 
 
+## Scala Setup \(Limited Use\)
+
+### Step 1 : Download and unzip hadoop-x.x.x.tar.gz
+
+```bash
+mkdir ~/temp
+cd ~/temp
+wget https://dist.apache.org/repos/dist/release/hadoop/common/hadoop-2.7.2/hadoop-2.7.2.tar.gz
+sudo mv hadoop-2.7.2.tar.gz /usr/local/hadoop
+```
+
+### Step 2 : Give permissions to hadoop. Replace &lt;&lt;username&gt;&gt; in bellow script with your computer name and execute
+
+```
+sudo chown +R <<username>>:<<username>> /usr/local/hadoop
+```
+
+### Step 3 : Add an environment variable.
+
+Follow steps similar to adding JAVA\_HOME, just that instead of JAVA\_HOME, you will have to add HADOOP\_HOME
+
+```
+HADOOP_HOME=/usr/local/hadoop
+```
+
+and path needs to be updated in .bashrc,.profile as bellow :
+
+```
+PATH=$HADOOP_HOME/bin:$PATH
+```
+
+> Never update the PATH env variable in \/etc\/environment directly the way you modify other variables. Rather add the expanded path in the exisiting PATH env variable declaration as bellow
+> 
+> ```
+> PATH=/usr/local/hadoop/bin:/usr/lib/jvm/java-7-oracle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+> ```
+
+and finally reboot the system or source the ~\/.bashrc and ~\/.profile file, the get the changes reflected.
+
+type 'hadoop', to see if the is returning any errors or not.
 
 
-sss
+
+---
+
+
+
+## Spark Setup \(Limited Use\)
+
+### Step 1 : Download and unzip hadoop-x.x.x.tar.gz
+
+```bash
+mkdir ~/temp
+cd ~/temp
+wget https://dist.apache.org/repos/dist/release/hadoop/common/hadoop-2.7.2/hadoop-2.7.2.tar.gz
+sudo mv hadoop-2.7.2.tar.gz /usr/local/hadoop
+```
+
+### Step 2 : Give permissions to hadoop. Replace &lt;&lt;username&gt;&gt; in bellow script with your computer name and execute
+
+```
+sudo chown +R <<username>>:<<username>> /usr/local/hadoop
+```
+
+### Step 3 : Add an environment variable.
+
+Follow steps similar to adding JAVA\_HOME, just that instead of JAVA\_HOME, you will have to add HADOOP\_HOME
+
+```
+HADOOP_HOME=/usr/local/hadoop
+```
+
+and path needs to be updated in .bashrc,.profile as bellow :
+
+```
+PATH=$HADOOP_HOME/bin:$PATH
+```
+
+> Never update the PATH env variable in \/etc\/environment directly the way you modify other variables. Rather add the expanded path in the exisiting PATH env variable declaration as bellow
+> 
+> ```
+> PATH=/usr/local/hadoop/bin:/usr/lib/jvm/java-7-oracle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+> ```
+
+and finally reboot the system or source the ~\/.bashrc and ~\/.profile file, the get the changes reflected.
+
+type 'hadoop', to see if the is returning any errors or not.
+
+
+
+---
+
+
 

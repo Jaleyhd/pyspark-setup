@@ -81,16 +81,16 @@ sudo chown +R <<username>>:<<username>> /usr/local/hadoop
 
 ### Step 3 : Add an environment variable.
 
-Follow steps similar to adding JAVA\_HOME, just that instead of JAVA\_HOME, you will have to add HADOOP\_HOME
+Follow steps similar to adding JAVA\_HOME, just that instead of JAVA\_HOME, you will have to add HADOOP\_HOME. Also update the .bashrc and .profile with the following exports which also includes HADOOP HOME.
 
 ```
-HADOOP_HOME=/usr/local/hadoop
-```
-
-and path needs to be updated in .bashrc,.profile as bellow :
 
 ```
-PATH=$HADOOP_HOME/bin:$PATH
+
+The path environment variable needs to be updated in .bashrc,.profile as bellow :
+
+```
+PATH=$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$PATH
 ```
 
 > Never update the PATH env variable in \/etc\/environment directly the way you modify other variables. Rather add the expanded path in the exisiting PATH env variable declaration as bellow
@@ -102,6 +102,32 @@ PATH=$HADOOP_HOME/bin:$PATH
 and finally reboot the system or source the ~\/.bashrc and ~\/.profile file, the get the changes reflected.
 
 type 'hadoop', to see if the is returning any errors or not.
+
+### Updating \*.conf files in Hadoop
+
+Simplest way is to run the following code as shown bellow :
+
+```
+sudo mkdir -p /app/hadoop/tmp
+sudo mkdir -p /app/hadoop/datanode
+sudo mkdir -p /app/hadoop/namenode
+sudo chown <<username>>:<<username>> /app/hadoop
+cd ~/temp
+wget -O hadoop-config.zip http://gdurl.com/Sw19/_/b5b85eb0cf49df586d54e4d060652f6b 
+# can also download from https://drive.google.com/file/d/0B7bnnRB2aYVZWlNMbUpXd25fa1E/view?usp=sharing
+#Be Careful while performing rm operations
+rm -r /usr/local/hadoop/etc/hadoop 
+unzip hadoop-config.zip 
+mv hadoop /usr/local/hadoop/etc/hadoop
+hadoop namenode -format
+start-all.sh
+```
+
+Refer to bellow two blogs for further clarity : 
+
+> http:\/\/www.michael-noll.com\/tutorials\/running-hadoop-on-ubuntu-linux-single-node-cluster\/
+> 
+> http:\/\/www.tutorialspoint.com\/hadoop\/hadoop\_enviornment\_setup.htm
 
 ---
 

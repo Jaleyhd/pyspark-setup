@@ -139,55 +139,55 @@ PATH=$SCALA_HOME/bin:$PATH
 > Never update the PATH env variable in \/etc\/environment directly the way you modify other variables. Rather add the expanded path in the exisiting PATH env variable declaration as bellow
 > 
 > ```
-> PATH=/usr/local/hadoop/bin:/usr/lib/jvm/java-7-oracle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+> PATH=/usr/local/scala/bin:/usr/lib/jvm/java-7-oracle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
 > ```
 
 and finally reboot the system or source the ~\/.bashrc and ~\/.profile file, the get the changes reflected.
 
-type 'hadoop', to see if the is returning any errors or not.
+When you type 'scala', a command line prompt should come.
 
 ---
 
 ## Spark Setup \(Limited Use\)
 
-### Step 1 : Download and unzip spark-x.x.x.tar.gz
+### Step 1 : Download and unzip spark-x.x.x-bin-hadoopx.x.tgz
 
 ```bash
 mkdir ~/temp
 cd ~/temp
-wget https://dist.apache.org/repos/dist/release/hadoop/common/hadoop-2.7.2/hadoop-2.7.2.tar.gz
-sudo mv hadoop-2.7.2.tar.gz /usr/local/hadoop
+wget http://d3kbcqa49mib13.cloudfront.net/spark-2.0.0-bin-hadoop2.7.tgz
+sudo mv spark-2.0.0-bin-hadoop2.7.tgz /usr/local/spark
 ```
 
-### Step 2 : Give permissions to hadoop. Replace &lt;&lt;username&gt;&gt; in bellow script with your computer name and execute
+### Step 2 : Give permissions to spark. Replace &lt;&lt;username&gt;&gt; in bellow script with your computer name and execute
 
 ```
-sudo chown +R <<username>>:<<username>> /usr/local/hadoop
+sudo chown +R <<username>>:<<username>> /usr/local/spark
 ```
 
 ### Step 3 : Add an environment variable.
 
-Follow steps similar to adding JAVA\_HOME, just that instead of JAVA\_HOME, you will have to add HADOOP\_HOME
+Follow steps similar to adding JAVA\_HOME, just that instead of JAVA\_HOME, you will have to add SPARK\_HOME
 
 ```
-HADOOP_HOME=/usr/local/hadoop
+SPARK_HOME=/usr/local/spark
 ```
 
 and path needs to be updated in .bashrc,.profile as bellow :
 
 ```
-PATH=$HADOOP_HOME/bin:$PATH
+PATH=$SPARK_HOME/bin:$PATH
 ```
 
 > Never update the PATH env variable in \/etc\/environment directly the way you modify other variables. Rather add the expanded path in the exisiting PATH env variable declaration as bellow
 > 
 > ```
-> PATH=/usr/local/hadoop/bin:/usr/lib/jvm/java-7-oracle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+> PATH=/usr/local/spark/bin:/usr/lib/jvm/java-7-oracle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
 > ```
 
 and finally reboot the system or source the ~\/.bashrc and ~\/.profile file, the get the changes reflected.
 
-type 'hadoop', to see if the is returning any errors or not.
+Now type spark-shell, to see if you get the required scala command prompt, with spark-context getting setup.
 
 ---
 

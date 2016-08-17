@@ -69,7 +69,8 @@ Please ping me at bugs.opensource@gmail.com , in case you have trouble setting u
 mkdir ~/temp
 cd ~/temp
 wget https://dist.apache.org/repos/dist/release/hadoop/common/hadoop-2.7.2/hadoop-2.7.2.tar.gz
-sudo mv hadoop-2.7.2.tar.gz /usr/local/hadoop
+tar -xvzf hadoop-2.7.2.tar.gz
+sudo mv hadoop-2.7.2 /usr/local/hadoop
 ```
 
 ### Step 2 : Give permissions to hadoop. Replace &lt;&lt;username&gt;&gt; in bellow script with your computer name and execute
@@ -102,41 +103,37 @@ and finally reboot the system or source the ~\/.bashrc and ~\/.profile file, the
 
 type 'hadoop', to see if the is returning any errors or not.
 
-
-
 ---
-
-
 
 ## Scala Setup \(Limited Use\)
 
-### Step 1 : Download and unzip hadoop-x.x.x.tar.gz
+### Step 1 : Download and unzip scala-x.x.x.tgz
 
 ```bash
-mkdir ~/temp
 cd ~/temp
-wget https://dist.apache.org/repos/dist/release/hadoop/common/hadoop-2.7.2/hadoop-2.7.2.tar.gz
-sudo mv hadoop-2.7.2.tar.gz /usr/local/hadoop
+wget http://downloads.lightbend.com/scala/2.11.8/scala-2.11.8.tgz
+tar -xvzf scala-2.11.8.tgz scala-2.11.8
+sudo mv scala-2.11.8 /usr/local/scala
 ```
 
-### Step 2 : Give permissions to hadoop. Replace &lt;&lt;username&gt;&gt; in bellow script with your computer name and execute
+### Step 2 : Give permissions to scala. Replace &lt;&lt;username&gt;&gt; in bellow script with your computer name and execute
 
 ```
-sudo chown +R <<username>>:<<username>> /usr/local/hadoop
+sudo chown +R <<username>>:<<username>> /usr/local/scala
 ```
 
 ### Step 3 : Add an environment variable.
 
-Follow steps similar to adding JAVA\_HOME, just that instead of JAVA\_HOME, you will have to add HADOOP\_HOME
+Follow steps similar to adding JAVA\_HOME, just that instead of JAVA\_HOME, you will have to add SCALA\_HOME
 
 ```
-HADOOP_HOME=/usr/local/hadoop
+SCALA_HOME=/usr/local/scala
 ```
 
 and path needs to be updated in .bashrc,.profile as bellow :
 
 ```
-PATH=$HADOOP_HOME/bin:$PATH
+PATH=$SCALA_HOME/bin:$PATH
 ```
 
 > Never update the PATH env variable in \/etc\/environment directly the way you modify other variables. Rather add the expanded path in the exisiting PATH env variable declaration as bellow
@@ -149,15 +146,11 @@ and finally reboot the system or source the ~\/.bashrc and ~\/.profile file, the
 
 type 'hadoop', to see if the is returning any errors or not.
 
-
-
 ---
-
-
 
 ## Spark Setup \(Limited Use\)
 
-### Step 1 : Download and unzip hadoop-x.x.x.tar.gz
+### Step 1 : Download and unzip spark-x.x.x.tar.gz
 
 ```bash
 mkdir ~/temp
@@ -196,9 +189,5 @@ and finally reboot the system or source the ~\/.bashrc and ~\/.profile file, the
 
 type 'hadoop', to see if the is returning any errors or not.
 
-
-
 ---
-
-
 

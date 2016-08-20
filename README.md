@@ -76,7 +76,7 @@ sudo mv hadoop-2.7.2 /usr/local/hadoop
 ### Step 2 : Give permissions to hadoop. Replace &lt;&lt;username&gt;&gt; in bellow script with your computer name and execute
 
 ```
-sudo chown +R <<username>>:<<username>> /usr/local/hadoop
+sudo chown -R <<username>>:<<username>> /usr/local/hadoop
 ```
 
 ### Step 3 : Add an environment variable.
@@ -154,7 +154,7 @@ sudo mv scala-2.11.8 /usr/local/scala
 ### Step 2 : Give permissions to scala. Replace &lt;&lt;username&gt;&gt; in bellow script with your computer name and execute
 
 ```
-sudo chown +R <<username>>:<<username>> /usr/local/scala
+sudo chown -R <<username>>:<<username>> /usr/local/scala
 ```
 
 ### Step 3 : Add an environment variable.
@@ -197,7 +197,7 @@ sudo mv spark-2.0.0-bin-hadoop2.7.tgz /usr/local/spark
 ### Step 2 : Give permissions to spark. Replace &lt;&lt;username&gt;&gt; in bellow script with your computer name and execute
 
 ```
-sudo chown +R <<username>>:<<username>> /usr/local/spark
+sudo chown -R <<username>>:<<username>> /usr/local/spark
 ```
 
 ### Step 3 : Add an environment variable.
